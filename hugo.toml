@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://mherlev.github.io/stunning_octothorp/'
 relativeURLs = true
 languageCode = 'en-us'
 title = 'My New Hugo Site'
