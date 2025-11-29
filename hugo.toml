@@ -1,4 +1,5 @@
 baseURL = 'https://example.org/'
+relativeURLs = true
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'archie'
