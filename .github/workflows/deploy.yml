@@ -29,6 +29,19 @@ jobs:
         run: |
           nix-shell --run "hugo --minify"
 
+      - name: Debug theme inclusion
+        run: |
+          echo "=== Checking if theme was used ==="
+          # Check if theme CSS exists in the build
+          find public -name "*.css" -exec echo "CSS: {}" \;
+          echo "=== Checking theme references in HTML ==="
+          # Check if HTML files reference the theme
+          find public -name "*.html" -exec grep -l "archie\|theme\|css" {} \; | head -5
+          echo "=== Sample HTML content ==="
+          find public -name "index.html" -exec head -20 {} \;
+          echo "=== Theme directory structure ==="
+          ls -la themes/archie/ 2>/dev/null || echo "Theme directory not found"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
